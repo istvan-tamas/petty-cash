@@ -2,6 +2,7 @@ package dev.exonbyte.pettycash.controller;
 
 import dev.exonbyte.pettycash.interfaces.Finance;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -11,9 +12,10 @@ public class REST {
     private Finance myFinance;
 
     @Autowired
-    public REST(Finance theFinance){
+    public REST(@Qualifier("personalFinance") Finance theFinance){
         myFinance = theFinance;
     }
+
 
     @GetMapping("/")
     public String test(){
