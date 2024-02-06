@@ -1,6 +1,7 @@
 package dev.exonbyte.pettycash.model;
 
 import dev.exonbyte.pettycash.interfaces.Finance;
+import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Component;
 
 @Component

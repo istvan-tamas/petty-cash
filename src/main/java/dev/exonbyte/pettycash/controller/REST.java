@@ -12,7 +12,7 @@ public class REST {
     private Finance myFinance;
 
     @Autowired
-    public REST(@Qualifier("personalFinance") Finance theFinance){
+    public REST(@Qualifier("personalFinance")  Finance theFinance){
         myFinance = theFinance;
     }
 
