@@ -10,10 +10,12 @@ import org.springframework.web.bind.annotation.RestController;
 public class REST {
 
     private Finance myFinance;
+    private Finance anotherFinance;
 
     @Autowired
-    public REST(@Qualifier("personalFinance")  Finance theFinance){
+    public REST(@Qualifier("personalFinance")  Finance theFinance, @Qualifier("personalFinance") Finance theOtherFinance){
         myFinance = theFinance;
+        anotherFinance = theOtherFinance;
     }
 
 
@@ -27,9 +29,9 @@ public class REST {
         return "Your balance is $0";
     }
 
-    @GetMapping("/account")
+    @GetMapping("/check")
     public String account(){
-        return "Your account info:";
+        return "beans " + (anotherFinance == theOtherFinance) ;
     }
 
     @GetMapping("/personal-finance")
